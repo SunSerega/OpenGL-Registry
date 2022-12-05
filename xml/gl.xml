@@ -8330,10 +8330,10 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glClearColor</name></proto>
-            <param kind="Clamp01,Color"><ptype>GLfloat</ptype> <name>red</name></param>
-            <param kind="Clamp01,Color"><ptype>GLfloat</ptype> <name>green</name></param>
-            <param kind="Clamp01,Color"><ptype>GLfloat</ptype> <name>blue</name></param>
-            <param kind="Clamp01,Color"><ptype>GLfloat</ptype> <name>alpha</name></param>
+            <param kind="Clamped[0; 1],Color"><ptype>GLfloat</ptype> <name>red</name></param>
+            <param kind="Clamped[0; 1],Color"><ptype>GLfloat</ptype> <name>green</name></param>
+            <param kind="Clamped[0; 1],Color"><ptype>GLfloat</ptype> <name>blue</name></param>
+            <param kind="Clamped[0; 1],Color"><ptype>GLfloat</ptype> <name>alpha</name></param>
             <glx type="render" opcode="130"/>
         </command>
         <command>
@@ -22672,7 +22672,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glSampleMaskIndexedNV</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
-            <param group="SampleMaskNV"><ptype>GLbitfield</ptype> <name>mask</name></param>
+            <param><ptype>GLbitfield</ptype> <name>mask</name></param>
         </command>
         <command>
             <proto>void <name>glSampleMaskSGIS</name></proto>
