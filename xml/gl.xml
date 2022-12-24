@@ -7182,7 +7182,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLint</ptype> <name>size</name></param>
             <param group="ScalarType"><ptype>GLenum</ptype> <name>type</name></param>
             <param><ptype>GLsizei</ptype> <name>stride</name></param>
-            <param class="buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
+            <param class="object buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
             <param><ptype>GLuint</ptype> <name>offset</name></param>
         </command>
         <command>
@@ -12535,7 +12535,7 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glFreeObjectBufferATI</name></proto>
-            <param class="buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
+            <param class="object buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
         </command>
         <command>
             <proto>void <name>glFrontFace</name></proto>
@@ -14266,13 +14266,13 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glGetObjectBufferfvATI</name></proto>
-            <param class="buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
+            <param class="object buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
             <param group="ArrayObjectPNameATI"><ptype>GLenum</ptype> <name>pname</name></param>
             <param len="1"><ptype>GLfloat</ptype> *<name>params</name></param>
         </command>
         <command>
             <proto>void <name>glGetObjectBufferivATI</name></proto>
-            <param class="buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
+            <param class="object buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
             <param group="ArrayObjectPNameATI"><ptype>GLenum</ptype> <name>pname</name></param>
             <param len="1"><ptype>GLint</ptype> *<name>params</name></param>
         </command>
@@ -16748,7 +16748,7 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto group="Boolean"><ptype>GLboolean</ptype> <name>glIsObjectBufferATI</name></proto>
-            <param class="buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
+            <param class="object buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
         </command>
         <command>
             <proto group="Boolean"><ptype>GLboolean</ptype> <name>glIsOcclusionQueryNV</name></proto>
@@ -19439,7 +19439,7 @@ typedef unsigned int GLhandleARB;
             <glx type="single" opcode="101"/>
         </command>
         <command>
-            <proto><ptype>GLuint</ptype> <name>glNewObjectBufferATI</name></proto>
+            <proto class="object buffer"><ptype>GLuint</ptype> <name>glNewObjectBufferATI</name></proto>
             <param><ptype>GLsizei</ptype> <name>size</name></param>
             <param len="size">const void *<name>pointer</name></param>
             <param group="ArrayObjectUsageATI"><ptype>GLenum</ptype> <name>usage</name></param>
@@ -26392,7 +26392,7 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glUpdateObjectBufferATI</name></proto>
-            <param class="buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
+            <param class="object buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
             <param><ptype>GLuint</ptype> <name>offset</name></param>
             <param><ptype>GLsizei</ptype> <name>size</name></param>
             <param len="size">const void *<name>pointer</name></param>
@@ -26511,7 +26511,7 @@ typedef unsigned int GLhandleARB;
             <param><ptype>GLuint</ptype> <name>id</name></param>
             <param group="ScalarType"><ptype>GLenum</ptype> <name>type</name></param>
             <param><ptype>GLsizei</ptype> <name>stride</name></param>
-            <param class="buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
+            <param class="object buffer"><ptype>GLuint</ptype> <name>buffer</name></param>
             <param><ptype>GLuint</ptype> <name>offset</name></param>
         </command>
         <command>
