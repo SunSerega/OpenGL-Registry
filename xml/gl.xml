@@ -13645,7 +13645,7 @@ typedef unsigned int GLhandleARB;
             <param len="COMPSIZE(pname)"><ptype>GLfixed</ptype> *<name>params</name></param>
         </command>
         <command>
-            <proto><ptype>GLuint64</ptype> <name>glGetImageHandleARB</name></proto>
+            <proto class="texture handle"><ptype>GLuint64</ptype> <name>glGetImageHandleARB</name></proto>
             <param class="texture"><ptype>GLuint</ptype> <name>texture</name></param>
             <param><ptype>GLint</ptype> <name>level</name></param>
             <param group="Boolean"><ptype>GLboolean</ptype> <name>layered</name></param>
@@ -13653,7 +13653,7 @@ typedef unsigned int GLhandleARB;
             <param group="PixelFormat"><ptype>GLenum</ptype> <name>format</name></param>
         </command>
         <command>
-            <proto><ptype>GLuint64</ptype> <name>glGetImageHandleNV</name></proto>
+            <proto class="texture handle"><ptype>GLuint64</ptype> <name>glGetImageHandleNV</name></proto>
             <param class="texture"><ptype>GLuint</ptype> <name>texture</name></param>
             <param><ptype>GLint</ptype> <name>level</name></param>
             <param group="Boolean"><ptype>GLboolean</ptype> <name>layered</name></param>
@@ -15366,16 +15366,16 @@ typedef unsigned int GLhandleARB;
             <param len="COMPSIZE(pname)"><ptype>GLfixed</ptype> *<name>params</name></param>
         </command>
         <command>
-            <proto><ptype>GLuint64</ptype> <name>glGetTextureHandleARB</name></proto>
+            <proto class="texture handle"><ptype>GLuint64</ptype> <name>glGetTextureHandleARB</name></proto>
             <param class="texture"><ptype>GLuint</ptype> <name>texture</name></param>
         </command>
         <command>
-            <proto><ptype>GLuint64</ptype> <name>glGetTextureHandleIMG</name></proto>
+            <proto class="texture handle"><ptype>GLuint64</ptype> <name>glGetTextureHandleIMG</name></proto>
             <param class="texture"><ptype>GLuint</ptype> <name>texture</name></param>
             <alias name="glGetTextureHandleARB"/>
         </command>
         <command>
-            <proto><ptype>GLuint64</ptype> <name>glGetTextureHandleNV</name></proto>
+            <proto class="texture handle"><ptype>GLuint64</ptype> <name>glGetTextureHandleNV</name></proto>
             <param class="texture"><ptype>GLuint</ptype> <name>texture</name></param>
         </command>
         <command>
@@ -15479,18 +15479,18 @@ typedef unsigned int GLhandleARB;
             <param len="COMPSIZE(pname)"><ptype>GLint</ptype> *<name>params</name></param>
         </command>
         <command>
-            <proto><ptype>GLuint64</ptype> <name>glGetTextureSamplerHandleARB</name></proto>
+            <proto class="texture handle"><ptype>GLuint64</ptype> <name>glGetTextureSamplerHandleARB</name></proto>
             <param class="texture"><ptype>GLuint</ptype> <name>texture</name></param>
             <param class="sampler"><ptype>GLuint</ptype> <name>sampler</name></param>
         </command>
         <command>
-            <proto><ptype>GLuint64</ptype> <name>glGetTextureSamplerHandleIMG</name></proto>
+            <proto class="texture handle"><ptype>GLuint64</ptype> <name>glGetTextureSamplerHandleIMG</name></proto>
             <param class="texture"><ptype>GLuint</ptype> <name>texture</name></param>
             <param class="sampler"><ptype>GLuint</ptype> <name>sampler</name></param>
             <alias name="glGetTextureSamplerHandleARB"/>
         </command>
         <command>
-            <proto><ptype>GLuint64</ptype> <name>glGetTextureSamplerHandleNV</name></proto>
+            <proto class="texture handle"><ptype>GLuint64</ptype> <name>glGetTextureSamplerHandleNV</name></proto>
             <param class="texture"><ptype>GLuint</ptype> <name>texture</name></param>
             <param class="sampler"><ptype>GLuint</ptype> <name>sampler</name></param>
         </command>
@@ -16717,11 +16717,11 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto group="Boolean"><ptype>GLboolean</ptype> <name>glIsImageHandleResidentARB</name></proto>
-            <param><ptype>GLuint64</ptype> <name>handle</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>handle</name></param>
         </command>
         <command>
             <proto group="Boolean"><ptype>GLboolean</ptype> <name>glIsImageHandleResidentNV</name></proto>
-            <param><ptype>GLuint64</ptype> <name>handle</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>handle</name></param>
         </command>
         <command>
             <proto group="Boolean"><ptype>GLboolean</ptype> <name>glIsList</name></proto>
@@ -16862,11 +16862,11 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto group="Boolean"><ptype>GLboolean</ptype> <name>glIsTextureHandleResidentARB</name></proto>
-            <param><ptype>GLuint64</ptype> <name>handle</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>handle</name></param>
         </command>
         <command>
             <proto group="Boolean"><ptype>GLboolean</ptype> <name>glIsTextureHandleResidentNV</name></proto>
-            <param><ptype>GLuint64</ptype> <name>handle</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>handle</name></param>
         </command>
         <command>
             <proto group="Boolean"><ptype>GLboolean</ptype> <name>glIsTransformFeedback</name></proto>
@@ -17198,21 +17198,21 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glMakeImageHandleNonResidentARB</name></proto>
-            <param><ptype>GLuint64</ptype> <name>handle</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>handle</name></param>
         </command>
         <command>
             <proto>void <name>glMakeImageHandleNonResidentNV</name></proto>
-            <param><ptype>GLuint64</ptype> <name>handle</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>handle</name></param>
         </command>
         <command>
             <proto>void <name>glMakeImageHandleResidentARB</name></proto>
-            <param><ptype>GLuint64</ptype> <name>handle</name></param>
-            <param><ptype>GLenum</ptype> <name>access</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>handle</name></param>
+            <param group="BufferAccessARB"><ptype>GLenum</ptype> <name>access</name></param>
         </command>
         <command>
             <proto>void <name>glMakeImageHandleResidentNV</name></proto>
-            <param><ptype>GLuint64</ptype> <name>handle</name></param>
-            <param><ptype>GLenum</ptype> <name>access</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>handle</name></param>
+            <param group="BufferAccessARB"><ptype>GLenum</ptype> <name>access</name></param>
         </command>
         <command>
             <proto>void <name>glMakeNamedBufferNonResidentNV</name></proto>
@@ -17225,19 +17225,19 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glMakeTextureHandleNonResidentARB</name></proto>
-            <param><ptype>GLuint64</ptype> <name>handle</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>handle</name></param>
         </command>
         <command>
             <proto>void <name>glMakeTextureHandleNonResidentNV</name></proto>
-            <param><ptype>GLuint64</ptype> <name>handle</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>handle</name></param>
         </command>
         <command>
             <proto>void <name>glMakeTextureHandleResidentARB</name></proto>
-            <param><ptype>GLuint64</ptype> <name>handle</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>handle</name></param>
         </command>
         <command>
             <proto>void <name>glMakeTextureHandleResidentNV</name></proto>
-            <param><ptype>GLuint64</ptype> <name>handle</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>handle</name></param>
         </command>
         <command>
             <proto>void <name>glMap1d</name></proto>
@@ -21470,34 +21470,34 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glProgramUniformHandleui64ARB</name></proto>
             <param class="program"><ptype>GLuint</ptype> <name>program</name></param>
             <param><ptype>GLint</ptype> <name>location</name></param>
-            <param><ptype>GLuint64</ptype> <name>value</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>value</name></param>
         </command>
         <command>
             <proto>void <name>glProgramUniformHandleui64IMG</name></proto>
             <param class="program"><ptype>GLuint</ptype> <name>program</name></param>
             <param><ptype>GLint</ptype> <name>location</name></param>
-            <param><ptype>GLuint64</ptype> <name>value</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>value</name></param>
             <alias name="glProgramUniformHandleui64ARB"/>
         </command>
         <command>
             <proto>void <name>glProgramUniformHandleui64NV</name></proto>
             <param class="program"><ptype>GLuint</ptype> <name>program</name></param>
             <param><ptype>GLint</ptype> <name>location</name></param>
-            <param><ptype>GLuint64</ptype> <name>value</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>value</name></param>
         </command>
         <command>
             <proto>void <name>glProgramUniformHandleui64vARB</name></proto>
             <param class="program"><ptype>GLuint</ptype> <name>program</name></param>
             <param><ptype>GLint</ptype> <name>location</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
-            <param len="count">const <ptype>GLuint64</ptype> *<name>values</name></param>
+            <param class="texture handle" len="count">const <ptype>GLuint64</ptype> *<name>values</name></param>
         </command>
         <command>
             <proto>void <name>glProgramUniformHandleui64vIMG</name></proto>
             <param class="program"><ptype>GLuint</ptype> <name>program</name></param>
             <param><ptype>GLint</ptype> <name>location</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
-            <param len="count">const <ptype>GLuint64</ptype> *<name>values</name></param>
+            <param class="texture handle" len="count">const <ptype>GLuint64</ptype> *<name>values</name></param>
             <alias name="glProgramUniformHandleui64vARB"/>
         </command>
         <command>
@@ -21505,7 +21505,7 @@ typedef unsigned int GLhandleARB;
             <param class="program"><ptype>GLuint</ptype> <name>program</name></param>
             <param><ptype>GLint</ptype> <name>location</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
-            <param len="count">const <ptype>GLuint64</ptype> *<name>values</name></param>
+            <param class="texture handle" len="count">const <ptype>GLuint64</ptype> *<name>values</name></param>
         </command>
         <command>
             <proto>void <name>glProgramUniformMatrix2dv</name></proto>
@@ -26103,37 +26103,37 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glUniformHandleui64ARB</name></proto>
             <param><ptype>GLint</ptype> <name>location</name></param>
-            <param><ptype>GLuint64</ptype> <name>value</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>value</name></param>
         </command>
         <command>
             <proto>void <name>glUniformHandleui64IMG</name></proto>
             <param><ptype>GLint</ptype> <name>location</name></param>
-            <param><ptype>GLuint64</ptype> <name>value</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>value</name></param>
             <alias name="glUniformHandleui64ARB"/>
         </command>
         <command>
             <proto>void <name>glUniformHandleui64NV</name></proto>
             <param><ptype>GLint</ptype> <name>location</name></param>
-            <param><ptype>GLuint64</ptype> <name>value</name></param>
+            <param class="texture handle"><ptype>GLuint64</ptype> <name>value</name></param>
         </command>
         <command>
             <proto>void <name>glUniformHandleui64vARB</name></proto>
             <param><ptype>GLint</ptype> <name>location</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
-            <param len="count">const <ptype>GLuint64</ptype> *<name>value</name></param>
+            <param class="texture handle" len="count">const <ptype>GLuint64</ptype> *<name>value</name></param>
         </command>
         <command>
             <proto>void <name>glUniformHandleui64vIMG</name></proto>
             <param><ptype>GLint</ptype> <name>location</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
-            <param len="count">const <ptype>GLuint64</ptype> *<name>value</name></param>
+            <param class="texture handle" len="count">const <ptype>GLuint64</ptype> *<name>value</name></param>
             <alias name="glUniformHandleui64vARB"/>
         </command>
         <command>
             <proto>void <name>glUniformHandleui64vNV</name></proto>
             <param><ptype>GLint</ptype> <name>location</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
-            <param len="count">const <ptype>GLuint64</ptype> *<name>value</name></param>
+            <param class="texture handle" len="count">const <ptype>GLuint64</ptype> *<name>value</name></param>
         </command>
         <command>
             <proto>void <name>glUniformMatrix2dv</name></proto>
@@ -28162,22 +28162,22 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glVertexAttribL1ui64ARB</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
-            <param><ptype>GLuint64EXT</ptype> <name>x</name></param>
+            <param class="texture handle"><ptype>GLuint64EXT</ptype> <name>x</name></param>
         </command>
         <command>
             <proto>void <name>glVertexAttribL1ui64NV</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
-            <param><ptype>GLuint64EXT</ptype> <name>x</name></param>
+            <param class="texture handle"><ptype>GLuint64EXT</ptype> <name>x</name></param>
         </command>
         <command>
             <proto>void <name>glVertexAttribL1ui64vARB</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
-            <param>const <ptype>GLuint64EXT</ptype> *<name>v</name></param>
+            <param class="texture handle">const <ptype>GLuint64EXT</ptype> *<name>v</name></param>
         </command>
         <command>
             <proto>void <name>glVertexAttribL1ui64vNV</name></proto>
             <param><ptype>GLuint</ptype> <name>index</name></param>
-            <param len="1">const <ptype>GLuint64EXT</ptype> *<name>v</name></param>
+            <param class="texture handle" len="1">const <ptype>GLuint64EXT</ptype> *<name>v</name></param>
         </command>
         <command>
             <proto>void <name>glVertexAttribL2d</name></proto>
