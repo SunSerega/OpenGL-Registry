@@ -833,8 +833,11 @@ typedef unsigned int GLhandleARB;
         <enum value="0x0D00" name="GL_PACK_SWAP_BYTES" group="PixelStoreParameter,GetPName"/>
         <enum value="0x0D01" name="GL_PACK_LSB_FIRST" group="PixelStoreParameter,GetPName"/>
         <enum value="0x0D02" name="GL_PACK_ROW_LENGTH" group="PixelStoreParameter,GetPName"/>
+        <enum value="0x0D02" name="GL_PACK_ROW_LENGTH_NV" group="PixelStoreParameter,GetPName"/>
         <enum value="0x0D03" name="GL_PACK_SKIP_ROWS" group="PixelStoreParameter,GetPName"/>
+        <enum value="0x0D03" name="GL_PACK_SKIP_ROWS_NV" group="PixelStoreParameter,GetPName"/>
         <enum value="0x0D04" name="GL_PACK_SKIP_PIXELS" group="PixelStoreParameter,GetPName"/>
+        <enum value="0x0D04" name="GL_PACK_SKIP_PIXELS_NV" group="PixelStoreParameter,GetPName"/>
         <enum value="0x0D05" name="GL_PACK_ALIGNMENT" group="PixelStoreParameter,GetPName"/>
 
         <enum value="0x0D10" name="GL_MAP_COLOR" group="PixelTransferParameter,GetPName"/>
@@ -6988,6 +6991,10 @@ typedef unsigned int GLhandleARB;
             <unused start="0x96E0" end="0x96EF" vendor="ANGLE"/>
     </enums>
 
+    <enums namespace="GL" start="0x96F0" end="0x96FF" vendor="ARM" comment="Contact Jan-Harald Fredriksen">
+            <unused start="0x96F0" end="0x96FF" vendor="ARM"/>
+    </enums>
+
 <!-- Enums reservable for future use. To reserve a new range, allocate one
      or more multiples of 16 starting at the lowest available point in this
      block and note it in a new <enums> block immediately above.
@@ -6997,8 +7004,8 @@ typedef unsigned int GLhandleARB;
      file) File requests in the Khronos Bugzilla, OpenGL project, Registry
      component. -->
 
-    <enums namespace="GL" start="0x96F0" end="99999" vendor="ARB" comment="RESERVED FOR FUTURE ALLOCATIONS BY KHRONOS">
-        <unused start="0x96F0" end="99999" comment="RESERVED"/>
+    <enums namespace="GL" start="0x9700" end="99999" vendor="ARB" comment="RESERVED FOR FUTURE ALLOCATIONS BY KHRONOS">
+        <unused start="0x9700" end="99999" comment="RESERVED"/>
     </enums>
 
 <!-- Historical large block allocations, all unused except (in older days) by IBM -->
@@ -8082,6 +8089,34 @@ typedef unsigned int GLhandleARB;
             <param group="BlitFramebufferFilter"><ptype>GLenum</ptype> <name>filter</name></param>
             <alias name="glBlitFramebuffer"/>
             <glx type="render" opcode="4330"/>
+        </command>
+        <command>
+            <proto>void <name>glBlitFramebufferLayerEXT</name></proto>
+            <param><ptype>GLint</ptype> <name>srcX0</name></param>
+            <param><ptype>GLint</ptype> <name>srcY0</name></param>
+            <param><ptype>GLint</ptype> <name>srcX1</name></param>
+            <param><ptype>GLint</ptype> <name>srcY1</name></param>
+            <param><ptype>GLint</ptype> <name>srcLayer</name></param>
+            <param><ptype>GLint</ptype> <name>dstX0</name></param>
+            <param><ptype>GLint</ptype> <name>dstY0</name></param>
+            <param><ptype>GLint</ptype> <name>dstX1</name></param>
+            <param><ptype>GLint</ptype> <name>dstY1</name></param>
+            <param><ptype>GLint</ptype> <name>dstLayer</name></param>
+            <param group="ClearBufferMask"><ptype>GLbitfield</ptype> <name>mask</name></param>
+            <param group="BlitFramebufferFilter"><ptype>GLenum</ptype> <name>filter</name></param>
+        </command>
+        <command>
+            <proto>void <name>glBlitFramebufferLayersEXT</name></proto>
+            <param><ptype>GLint</ptype> <name>srcX0</name></param>
+            <param><ptype>GLint</ptype> <name>srcY0</name></param>
+            <param><ptype>GLint</ptype> <name>srcX1</name></param>
+            <param><ptype>GLint</ptype> <name>srcY1</name></param>
+            <param><ptype>GLint</ptype> <name>dstX0</name></param>
+            <param><ptype>GLint</ptype> <name>dstY0</name></param>
+            <param><ptype>GLint</ptype> <name>dstX1</name></param>
+            <param><ptype>GLint</ptype> <name>dstY1</name></param>
+            <param group="ClearBufferMask"><ptype>GLbitfield</ptype> <name>mask</name></param>
+            <param group="BlitFramebufferFilter"><ptype>GLenum</ptype> <name>filter</name></param>
         </command>
         <command>
             <proto>void <name>glBlitFramebufferNV</name></proto>
@@ -40855,6 +40890,12 @@ typedef unsigned int GLhandleARB;
                 <command name="glBlitFramebufferEXT"/>
             </require>
         </extension>
+        <extension name="GL_EXT_framebuffer_blit_layers" supported="gl|gles2">
+            <require>
+                <command name="glBlitFramebufferLayersEXT"/>
+                <command name="glBlitFramebufferLayerEXT"/>
+            </require>
+        </extension>
         <extension name="GL_EXT_framebuffer_multisample" supported="gl">
             <require>
                 <enum name="GL_RENDERBUFFER_SAMPLES_EXT"/>
@@ -45580,6 +45621,13 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_VIEWPORT_SWIZZLE_Z_NV"/>
                 <enum name="GL_VIEWPORT_SWIZZLE_W_NV"/>
                 <command name="glViewportSwizzleNV"/>
+            </require>
+        </extension>
+        <extension name="GL_NV_pack_subimage" supported="gles2">
+            <require>
+                <enum name="GL_PACK_ROW_LENGTH_NV"/>
+                <enum name="GL_PACK_SKIP_ROWS_NV"/>
+                <enum name="GL_PACK_SKIP_PIXELS_NV"/>
             </require>
         </extension>
         <extension name="GL_OES_EGL_image" supported="gles1|gles2">
