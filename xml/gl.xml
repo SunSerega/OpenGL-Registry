@@ -6149,14 +6149,14 @@ typedef unsigned int GLhandleARB;
         <enum value="0x9148" name="GL_DEBUG_SEVERITY_LOW_AMD"/>
         <enum value="0x9148" name="GL_DEBUG_SEVERITY_LOW_ARB"/>
         <enum value="0x9148" name="GL_DEBUG_SEVERITY_LOW_KHR"/>
-        <enum value="0x9149" name="GL_DEBUG_CATEGORY_API_ERROR_AMD"/>
-        <enum value="0x914A" name="GL_DEBUG_CATEGORY_WINDOW_SYSTEM_AMD"/>
-        <enum value="0x914B" name="GL_DEBUG_CATEGORY_DEPRECATION_AMD"/>
-        <enum value="0x914C" name="GL_DEBUG_CATEGORY_UNDEFINED_BEHAVIOR_AMD"/>
-        <enum value="0x914D" name="GL_DEBUG_CATEGORY_PERFORMANCE_AMD"/>
-        <enum value="0x914E" name="GL_DEBUG_CATEGORY_SHADER_COMPILER_AMD"/>
-        <enum value="0x914F" name="GL_DEBUG_CATEGORY_APPLICATION_AMD"/>
-        <enum value="0x9150" name="GL_DEBUG_CATEGORY_OTHER_AMD"/>
+        <enum value="0x9149" name="GL_DEBUG_CATEGORY_API_ERROR_AMD" group="DebugCategory"/>
+        <enum value="0x914A" name="GL_DEBUG_CATEGORY_WINDOW_SYSTEM_AMD" group="DebugCategory"/>
+        <enum value="0x914B" name="GL_DEBUG_CATEGORY_DEPRECATION_AMD" group="DebugCategory"/>
+        <enum value="0x914C" name="GL_DEBUG_CATEGORY_UNDEFINED_BEHAVIOR_AMD" group="DebugCategory"/>
+        <enum value="0x914D" name="GL_DEBUG_CATEGORY_PERFORMANCE_AMD" group="DebugCategory"/>
+        <enum value="0x914E" name="GL_DEBUG_CATEGORY_SHADER_COMPILER_AMD" group="DebugCategory"/>
+        <enum value="0x914F" name="GL_DEBUG_CATEGORY_APPLICATION_AMD" group="DebugCategory"/>
+        <enum value="0x9150" name="GL_DEBUG_CATEGORY_OTHER_AMD" group="DebugCategory"/>
         <enum value="0x9151" name="GL_BUFFER_OBJECT_EXT"/>
         <enum value="0x9151" name="GL_DATA_BUFFER_AMD"/>
         <enum value="0x9152" name="GL_PERFORMANCE_MONITOR_AMD"/>
@@ -10487,7 +10487,7 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glDebugMessageEnableAMD</name></proto>
-            <param><ptype>GLenum</ptype> <name>category</name></param>
+            <param group="DebugCategory"><ptype>GLenum</ptype> <name>category</name></param>
             <param group="DebugSeverity"><ptype>GLenum</ptype> <name>severity</name></param>
             <param><ptype>GLsizei</ptype> <name>count</name></param>
             <param len="count">const <ptype>GLuint</ptype> *<name>ids</name></param>
@@ -13392,7 +13392,7 @@ typedef unsigned int GLhandleARB;
             <proto><ptype>GLuint</ptype> <name>glGetDebugMessageLogAMD</name></proto>
             <param><ptype>GLuint</ptype> <name>count</name></param>
             <param><ptype>GLsizei</ptype> <name>bufSize</name></param>
-            <param len="count"><ptype>GLenum</ptype> *<name>categories</name></param>
+            <param len="count" group="DebugCategory"><ptype>GLenum</ptype> *<name>categories</name></param>
             <param len="count" group="DebugSeverity"><ptype>GLenum</ptype> *<name>severities</name></param>
             <param len="count"><ptype>GLuint</ptype> *<name>ids</name></param>
             <param len="count"><ptype>GLsizei</ptype> *<name>lengths</name></param>
