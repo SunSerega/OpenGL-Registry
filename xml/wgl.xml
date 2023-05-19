@@ -51,7 +51,7 @@ Registry at https://github.com/KhronosGroup/OpenGL-Registry
     DWORD  cb;
     CHAR   DeviceName[32];
     CHAR   DeviceString[128];
-    DWORD  Flags;
+    DWORD  Flags; // ATTACHED_TO_DESKTOP=1, PRIMARY_DEVICE=2, ???
     RECT   rcVirtualScreen;
 };</type>
             <!-- These are actual WGL types. Windows types are not included.  -->
