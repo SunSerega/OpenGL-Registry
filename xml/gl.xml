@@ -2516,9 +2516,9 @@ typedef unsigned int GLhandleARB;
         <enum value="0x83F6" name="GL_NORMAL_ARRAY_PARALLEL_POINTERS_INTEL"/>
         <enum value="0x83F7" name="GL_COLOR_ARRAY_PARALLEL_POINTERS_INTEL"/>
         <enum value="0x83F8" name="GL_TEXTURE_COORD_ARRAY_PARALLEL_POINTERS_INTEL"/>
-        <enum value="0x83F9" name="GL_PERFQUERY_DONOT_FLUSH_INTEL"/>
-        <enum value="0x83FA" name="GL_PERFQUERY_FLUSH_INTEL"/>
-        <enum value="0x83FB" name="GL_PERFQUERY_WAIT_INTEL"/>
+        <enum value="0x83F9" name="GL_PERFQUERY_DONOT_FLUSH_INTEL" group="PerfQueryDataFlags"/>
+        <enum value="0x83FA" name="GL_PERFQUERY_FLUSH_INTEL" group="PerfQueryDataFlags"/>
+        <enum value="0x83FB" name="GL_PERFQUERY_WAIT_INTEL" group="PerfQueryDataFlags"/>
         <enum value="0x83FC" name="GL_BLACKHOLE_RENDER_INTEL"/>
             <unused start="0x83FD" vendor="INTEL"/>
         <enum value="0x83FE" name="GL_CONSERVATIVE_RASTERIZATION_INTEL"/>
@@ -5512,7 +5512,8 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8EA0" name="GL_TRP_IMG"/>
         <enum value="0x8EA1" name="GL_TRP_ERROR_CONTEXT_RESET_IMG"/>
         <enum value="0x8EA2" name="GL_TRP_UNSUPPORTED_CONTEXT_IMG"/>
-            <unused start="0x8EA3" end="0x8EAF" vendor="IMG"/>
+        <enum value="0x8EA3" name="GL_PVRIC_SIGNATURE_MISMATCH_IMG"/>
+            <unused start="0x8EA4" end="0x8EAF" vendor="IMG"/>
     </enums>
 
     <enums namespace="GL" start="0x8EB0" end="0x8EBF" vendor="OES" comment="For Affie Munshi 2007/07/20">
@@ -6262,7 +6263,12 @@ typedef unsigned int GLhandleARB;
         <enum value="0x9242" name="GL_CONTEXT_LOST_WEBGL"/>
         <enum value="0x9243" name="GL_UNPACK_COLORSPACE_CONVERSION_WEBGL"/>
         <enum value="0x9244" name="GL_BROWSER_DEFAULT_WEBGL"/>
-            <unused start="0x9245" end="0x924F" vendor="WEBGL"/>
+        <enum value="0x9245" name="GL_UNMASKED_VENDOR_WEBGL" comment="From the WEBGL_debug_renderer_info extension"/>
+        <enum value="0x9246" name="GL_UNMASKED_RENDERER_WEBGL" comment="From the WEBGL_debug_renderer_info extension"/>
+        <enum value="0x9247" name="GL_MAX_CLIENT_WAIT_TIMEOUT_WEBGL"/>
+        <enum value="0x9248" name="GL_TEXTURE_VIDEO_IMAGE_WEBGL" comment="From the WEBGL_video_texture extension"/>
+        <enum value="0x9249" name="GL_SAMPLER_VIDEO_IMAGE_WEBGL" comment="From the WEBGL_video_texture extension"/>
+            <unused start="0x924A" end="0x924F" vendor="WEBGL"/>
     </enums>
 
     <enums namespace="GL" start="0x9250" end="0x925F" vendor="DMP" comment="For Eisaku Ohbuchi via email">
@@ -7326,7 +7332,7 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glBeginPerfQueryINTEL</name></proto>
-            <param><ptype>GLuint</ptype> <name>queryHandle</name></param>
+            <param class="perf query handle"><ptype>GLuint</ptype> <name>queryHandle</name></param>
         </command>
         <command>
             <proto>void <name>glBeginQuery</name></proto>
@@ -10317,8 +10323,8 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glCreatePerfQueryINTEL</name></proto>
-            <param><ptype>GLuint</ptype> <name>queryId</name></param>
-            <param><ptype>GLuint</ptype> *<name>queryHandle</name></param>
+            <param class="perf query id"><ptype>GLuint</ptype> <name>queryId</name></param>
+            <param class="perf query handle"><ptype>GLuint</ptype> *<name>queryHandle</name></param>
         </command>
         <command>
             <proto class="program"><ptype>GLuint</ptype> <name>glCreateProgram</name></proto>
@@ -10667,7 +10673,7 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glDeletePerfQueryINTEL</name></proto>
-            <param><ptype>GLuint</ptype> <name>queryHandle</name></param>
+            <param class="perf query handle"><ptype>GLuint</ptype> <name>queryHandle</name></param>
         </command>
         <command>
             <proto>void <name>glDeleteProgram</name></proto>
@@ -11738,7 +11744,7 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glEndPerfQueryINTEL</name></proto>
-            <param><ptype>GLuint</ptype> <name>queryHandle</name></param>
+            <param class="perf query handle"><ptype>GLuint</ptype> <name>queryHandle</name></param>
         </command>
         <command>
             <proto>void <name>glEndQuery</name></proto>
@@ -13493,7 +13499,7 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glGetFirstPerfQueryIdINTEL</name></proto>
-            <param><ptype>GLuint</ptype> *<name>queryId</name></param>
+            <param class="perf query id"><ptype>GLuint</ptype> *<name>queryId</name></param>
         </command>
         <command>
             <proto>void <name>glGetFixedv</name></proto>
@@ -14339,8 +14345,8 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glGetNextPerfQueryIdINTEL</name></proto>
-            <param><ptype>GLuint</ptype> <name>queryId</name></param>
-            <param><ptype>GLuint</ptype> *<name>nextQueryId</name></param>
+            <param class="perf query id"><ptype>GLuint</ptype> <name>queryId</name></param>
+            <param class="perf query id"><ptype>GLuint</ptype> *<name>nextQueryId</name></param>
         </command>
         <command>
             <proto>void <name>glGetObjectBufferfvATI</name></proto>
@@ -14514,7 +14520,7 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glGetPerfCounterInfoINTEL</name></proto>
-            <param><ptype>GLuint</ptype> <name>queryId</name></param>
+            <param class="perf query id"><ptype>GLuint</ptype> <name>queryId</name></param>
             <param><ptype>GLuint</ptype> <name>counterId</name></param>
             <param><ptype>GLuint</ptype> <name>counterNameLength</name></param>
             <param len="counterNameLength"><ptype>GLchar</ptype> *<name>counterName</name></param>
@@ -14572,8 +14578,8 @@ typedef unsigned int GLhandleARB;
         </command>
         <command>
             <proto>void <name>glGetPerfQueryDataINTEL</name></proto>
-            <param><ptype>GLuint</ptype> <name>queryHandle</name></param>
-            <param><ptype>GLuint</ptype> <name>flags</name></param>
+            <param class="perf query handle"><ptype>GLuint</ptype> <name>queryHandle</name></param>
+            <param group="PerfQueryDataFlags"><ptype>GLuint</ptype> <name>flags</name></param>
             <param><ptype>GLsizei</ptype> <name>dataSize</name></param>
             <param>void *<name>data</name></param>
             <param><ptype>GLuint</ptype> *<name>bytesWritten</name></param>
@@ -14581,11 +14587,11 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glGetPerfQueryIdByNameINTEL</name></proto>
             <param><ptype>GLchar</ptype> *<name>queryName</name></param>
-            <param><ptype>GLuint</ptype> *<name>queryId</name></param>
+            <param class="perf query id"><ptype>GLuint</ptype> *<name>queryId</name></param>
         </command>
         <command>
             <proto>void <name>glGetPerfQueryInfoINTEL</name></proto>
-            <param><ptype>GLuint</ptype> <name>queryId</name></param>
+            <param class="perf query id"><ptype>GLuint</ptype> <name>queryId</name></param>
             <param><ptype>GLuint</ptype> <name>queryNameLength</name></param>
             <param len="queryNameLength"><ptype>GLchar</ptype> *<name>queryName</name></param>
             <param><ptype>GLuint</ptype> *<name>dataSize</name></param>
@@ -42985,6 +42991,11 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_TRP_IMG"/>
                 <enum name="GL_TRP_ERROR_CONTEXT_RESET_IMG"/>
                 <enum name="GL_TRP_UNSUPPORTED_CONTEXT_IMG"/>
+            </require>
+        </extension>
+        <extension name="GL_IMG_pvric_end_to_end_signature" supported="glsc2">
+            <require>
+                <enum name="GL_PVRIC_SIGNATURE_MISMATCH_IMG"/>
             </require>
         </extension>
         <extension name="GL_INGR_blend_func_separate" supported="gl">
