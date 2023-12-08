@@ -1407,6 +1407,11 @@ registry = {
         'flags' : { 'public' },
         'url' : 'extensions/ARM/ARM_rgba8.txt',
     },
+    'GL_ARM_shader_core_properties' : {
+        'esnumber' : 345,
+        'flags' : { 'public' },
+        'url' : 'extensions/ARM/ARM_shader_core_properties.txt',
+    },
     'GL_ARM_shader_framebuffer_fetch' : {
         'esnumber' : 165,
         'flags' : { 'public' },
@@ -3113,6 +3118,12 @@ registry = {
         'flags' : { 'public' },
         'supporters' : { 'MESA' },
         'url' : 'extensions/MESA/MESA_resize_buffers.txt',
+    },
+    'GL_MESA_sampler_objects' : {
+        'esnumber' : 344,
+        'flags' : { 'public' },
+        'supporters' : { 'MESA' },
+        'url' : 'extensions/MESA/MESA_sampler_objects.txt',
     },
     'GLX_MESA_set_3dfx_mode' : {
         'number' : 218,
