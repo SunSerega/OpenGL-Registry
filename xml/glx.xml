@@ -160,7 +160,7 @@ typedef unsigned __int64 uint64_t;
         <type>typedef struct {
     char    pipeName[80]; /* Should be [GLX_HYPERPIPE_PIPE_NAME_LENGTH_SGIX] */
     int     channel;
-    unsigned int participationType;
+    unsigned int participationType; // GLXHyperpipeTypeMask
     int     timeSlice;
 } <name>GLXHyperpipeConfigSGIX</name>;</type>
 
@@ -176,7 +176,6 @@ typedef unsigned __int64 uint64_t;
 } <name>GLXPipeRectLimits</name>;</type>
 
     </types>
-
 
     <!-- SECTION: GLX enumerant (token) definitions. -->
 
