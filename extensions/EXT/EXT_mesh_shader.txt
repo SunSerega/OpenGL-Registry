@@ -13,6 +13,8 @@ Contact
 Contributors
 
     Qiang Yu, AMD
+    Contributors for GL_NV_mesh_shader
+    Contributors for VK_EXT_mesh_shader
 
 Status
 
@@ -20,7 +22,7 @@ Status
 
 Version
 
-    Last Modified Date:     December 1, 2024
+    Last Modified Date:     January 2, 2025
     Revision:               1
 
 Number
@@ -79,119 +81,119 @@ New Tokens
     Accepted by the <type> parameter of CreateShader and returned by the
     <params> parameter of GetShaderiv:
 
-        MESH_SHADER_EXT                                     0xF001
-        TASK_SHADER_EXT                                     0xF002
+        MESH_SHADER_EXT                                     0x9559
+        TASK_SHADER_EXT                                     0x955A
 
     Accepted by the <pname> parameter of GetIntegerv, GetBooleanv, GetFloatv,
     GetDoublev and GetInteger64v:
 
-        MAX_TASK_UNIFORM_BLOCKS_EXT                         0xF003
-        MAX_TASK_TEXTURE_IMAGE_UNITS_EXT                    0xF004
-        MAX_TASK_IMAGE_UNIFORMS_EXT                         0xF005
-        MAX_TASK_UNIFORM_COMPONENTS_EXT                     0xF006
-        MAX_TASK_ATOMIC_COUNTER_BUFFERS_EXT                 0xF007
-        MAX_TASK_ATOMIC_COUNTERS_EXT                        0xF008
-        MAX_TASK_SHADER_STORAGE_BLOCKS_EXT                  0xF009
-        MAX_COMBINED_TASK_UNIFORM_COMPONENTS_EXT            0xF00A
+        MAX_TASK_UNIFORM_BLOCKS_EXT                         0x8E68
+        MAX_TASK_TEXTURE_IMAGE_UNITS_EXT                    0x8E69
+        MAX_TASK_IMAGE_UNIFORMS_EXT                         0x8E6A
+        MAX_TASK_UNIFORM_COMPONENTS_EXT                     0x8E6B
+        MAX_TASK_ATOMIC_COUNTER_BUFFERS_EXT                 0x8E6C
+        MAX_TASK_ATOMIC_COUNTERS_EXT                        0x8E6D
+        MAX_TASK_SHADER_STORAGE_BLOCKS_EXT                  0x8E6E
+        MAX_COMBINED_TASK_UNIFORM_COMPONENTS_EXT            0x8E6F
 
-        MAX_MESH_UNIFORM_BLOCKS_EXT                         0xF00B
-        MAX_MESH_TEXTURE_IMAGE_UNITS_EXT                    0xF00C
-        MAX_MESH_IMAGE_UNIFORMS_EXT                         0xF00D
-        MAX_MESH_UNIFORM_COMPONENTS_EXT                     0xF00E
-        MAX_MESH_ATOMIC_COUNTER_BUFFERS_EXT                 0xF00F
-        MAX_MESH_ATOMIC_COUNTERS_EXT                        0xF010
-        MAX_MESH_SHADER_STORAGE_BLOCKS_EXT                  0xF011
-        MAX_COMBINED_MESH_UNIFORM_COMPONENTS_EXT            0xF012
+        MAX_MESH_UNIFORM_BLOCKS_EXT                         0x8E60
+        MAX_MESH_TEXTURE_IMAGE_UNITS_EXT                    0x8E61
+        MAX_MESH_IMAGE_UNIFORMS_EXT                         0x8E62
+        MAX_MESH_UNIFORM_COMPONENTS_EXT                     0x8E63
+        MAX_MESH_ATOMIC_COUNTER_BUFFERS_EXT                 0x8E64
+        MAX_MESH_ATOMIC_COUNTERS_EXT                        0x8E65
+        MAX_MESH_SHADER_STORAGE_BLOCKS_EXT                  0x8E66
+        MAX_COMBINED_MESH_UNIFORM_COMPONENTS_EXT            0x8E67
 
-        MAX_TASK_WORK_GROUP_TOTAL_COUNT_EXT                 0xF013
-        MAX_MESH_WORK_GROUP_TOTAL_COUNT_EXT                 0xF014
+        MAX_TASK_WORK_GROUP_TOTAL_COUNT_EXT                 0xF000
+        MAX_MESH_WORK_GROUP_TOTAL_COUNT_EXT                 0xF001
 
-        MAX_MESH_WORK_GROUP_INVOCATIONS_EXT                 0xF015
-        MAX_TASK_WORK_GROUP_INVOCATIONS_EXT                 0xF016
+        MAX_MESH_WORK_GROUP_INVOCATIONS_EXT                 0x95A2
+        MAX_TASK_WORK_GROUP_INVOCATIONS_EXT                 0x95A3
 
-        MAX_TASK_PAYLOAD_SIZE_EXT                           0xF017
+        MAX_TASK_PAYLOAD_SIZE_EXT                           0xF002
 
-        MAX_TASK_SHARED_MEMORY_SIZE_EXT                     0xF018
-        MAX_MESH_SHARED_MEMORY_SIZE_EXT                     0xF019
+        MAX_TASK_SHARED_MEMORY_SIZE_EXT                     0xF003
+        MAX_MESH_SHARED_MEMORY_SIZE_EXT                     0xF004
 
-        MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_EXT         0xF01A
-        MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_EXT         0xF01B
+        MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_EXT         0xF005
+        MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_EXT         0xF006
 
-        MAX_MESH_OUTPUT_MEMORY_SIZE_EXT                     0xF01C
+        MAX_MESH_OUTPUT_MEMORY_SIZE_EXT                     0xF007
 
-        MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_EXT         0xF01D
+        MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_EXT         0xF008
 
-        MAX_MESH_OUTPUT_VERTICES_EXT                        0xF01E
-        MAX_MESH_OUTPUT_PRIMITIVES_EXT                      0xF01F
-        MAX_MESH_OUTPUT_COMPONENTS_EXT                      0xF020
-        MAX_MESH_OUTPUT_LAYERS_EXT                          0xF021
+        MAX_MESH_OUTPUT_VERTICES_EXT                        0x9538
+        MAX_MESH_OUTPUT_PRIMITIVES_EXT                      0x9539
+        MAX_MESH_OUTPUT_COMPONENTS_EXT                      0xF009
+        MAX_MESH_OUTPUT_LAYERS_EXT                          0xF00A
 
-        MAX_MESH_MULTIVIEW_VIEW_COUNT_EXT                   0xF022
+        MAX_MESH_MULTIVIEW_VIEW_COUNT_EXT                   0x9557
 
-        MESH_OUTPUT_PER_VERTEX_GRANULARITY_EXT              0xF023
-        MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_EXT           0xF024
+        MESH_OUTPUT_PER_VERTEX_GRANULARITY_EXT              0x92DF
+        MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_EXT           0x9543
 
-        MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_EXT       0xF025
-        MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_EXT       0xF026
+        MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_EXT       0xF00B
+        MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_EXT       0xF00C
 
-        MESH_PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_EXT     0xF027
-        MESH_PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_EXT  0xF028
+        MESH_PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_EXT     0xF00D
+        MESH_PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_EXT  0xF00E
 
-        MESH_PREFERS_COMPACT_VERTEX_OUTPUT_EXT              0xF029
-        MESH_PREFERS_COMPACT_PRIMITIVE_OUTPUT_EXT           0xF02A
+        MESH_PREFERS_COMPACT_VERTEX_OUTPUT_EXT              0xF00F
+        MESH_PREFERS_COMPACT_PRIMITIVE_OUTPUT_EXT           0xF010
 
 
     Accepted by the <pname> parameter of GetIntegeri_v, GetBooleani_v,
     GetFloati_v, GetDoublei_v and GetInteger64i_v:
 
-        MAX_TASK_WORK_GROUP_COUNT_EXT                       0xF02B
-        MAX_MESH_WORK_GROUP_COUNT_EXT                       0xF02C
+        MAX_TASK_WORK_GROUP_COUNT_EXT                       0xF011
+        MAX_MESH_WORK_GROUP_COUNT_EXT                       0xF012
 
-        MAX_TASK_WORK_GROUP_SIZE_EXT                        0xF02D
-        MAX_MESH_WORK_GROUP_SIZE_EXT                        0xF02E
+        MAX_TASK_WORK_GROUP_SIZE_EXT                        0x953C
+        MAX_MESH_WORK_GROUP_SIZE_EXT                        0x953B
 
 
     Accepted by the <pname> parameter of GetProgramiv:
 
-        TASK_WORK_GROUP_SIZE_EXT                            0xF02F
-        MESH_WORK_GROUP_SIZE_EXT                            0xF030
+        TASK_WORK_GROUP_SIZE_EXT                            0x953F
+        MESH_WORK_GROUP_SIZE_EXT                            0x953E
 
-        MESH_VERTICES_OUT_EXT                               0xF031
-        MESH_PRIMITIVES_OUT_EXT                             0xF032
-        MESH_OUTPUT_TYPE_EXT                                0xF033
+        MESH_VERTICES_OUT_EXT                               0x9579
+        MESH_PRIMITIVES_OUT_EXT                             0x957A
+        MESH_OUTPUT_TYPE_EXT                                0x957B
 
     Accepted by the <pname> parameter of GetActiveUniformBlockiv:
 
-        UNIFORM_BLOCK_REFERENCED_BY_MESH_SHADER_EXT         0xF034
-        UNIFORM_BLOCK_REFERENCED_BY_TASK_SHADER_EXT         0xF035
+        UNIFORM_BLOCK_REFERENCED_BY_MESH_SHADER_EXT         0x959C
+        UNIFORM_BLOCK_REFERENCED_BY_TASK_SHADER_EXT         0x959D
 
     Accepted by the <pname> parameter of GetActiveAtomicCounterBufferiv:
 
-        ATOMIC_COUNTER_BUFFER_REFERENCED_BY_MESH_SHADER_EXT 0xF036
-        ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TASK_SHADER_EXT 0xF037
+        ATOMIC_COUNTER_BUFFER_REFERENCED_BY_MESH_SHADER_EXT 0x959E
+        ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TASK_SHADER_EXT 0x959F
 
     Accepted in the <props> array of GetProgramResourceiv:
 
-        REFERENCED_BY_MESH_SHADER_EXT                       0xF038
-        REFERENCED_BY_TASK_SHADER_EXT                       0xF039
+        REFERENCED_BY_MESH_SHADER_EXT                       0x95A0
+        REFERENCED_BY_TASK_SHADER_EXT                       0x95A1
 
     Accepted by the <programInterface> parameter of GetProgramInterfaceiv,
     GetProgramResourceIndex, GetProgramResourceName, GetProgramResourceiv,
     GetProgramResourceLocation, and GetProgramResourceLocationIndex:
 
-        MESH_SUBROUTINE_EXT                                 0xF03A
-        TASK_SUBROUTINE_EXT                                 0xF03B
+        MESH_SUBROUTINE_EXT                                 0x957C
+        TASK_SUBROUTINE_EXT                                 0x957D
 
-        MESH_SUBROUTINE_UNIFORM_EXT                         0xF03C
-        TASK_SUBROUTINE_UNIFORM_EXT                         0xF03D
+        MESH_SUBROUTINE_UNIFORM_EXT                         0x957E
+        TASK_SUBROUTINE_UNIFORM_EXT                         0x957F
 
     Accepted by the <target> parameter of BeginQuery, EndQuery, GetQueryiv,
     BeginQueryIndexed, EndQueryIndexed and GetQueryIndexediv:
 
-        TASK_SHADER_INVOCATIONS_EXT                         0xF03E
-        MESH_SHADER_INVOCATIONS_EXT                         0xF03F
+        TASK_SHADER_INVOCATIONS_EXT                         0xF013
+        MESH_SHADER_INVOCATIONS_EXT                         0xF014
 
-        MESH_PRIMITIVES_GENERATED_EXT                       0xF040
+        MESH_PRIMITIVES_GENERATED_EXT                       0xF015
 
     Accepted by the <stages> parameter of UseProgramStages:
 
@@ -1055,7 +1057,7 @@ New Implementation Dependent State
     | MAX_MESH_OUTPUT_VERTICES_EXT             | Z+        | GetIntegerv   | 256                 | Maximum number of vertices a single mesh work group can emit          | X.5      |
     | MAX_MESH_OUTPUT_COMPONENTS_EXT           | Z+        | GetIntegerv   | 128                 | maximum number of components of mesh shader output variables          | X.5      |
     | MAX_MESH_OUTPUT_LAYERS_EXT               | Z+        | GetIntegerv   | 1                   | Maximum number of layers that a mesh shader can render to             | X.5      |
-    | MAX_MESH_MULTIVIEW_VIEW_COUNT_EXT        | Z+        | GetIntegerv   | 0                   | Maximum number of multi-view views that can be used in a mesh shader  | X.10     |
+    | MAX_MESH_MULTIVIEW_VIEW_COUNT_EXT        | Z+        | GetIntegerv   | 1                   | Maximum number of multi-view views that can be used in a mesh shader  | X.10     |
     +------------------------------------------+-----------+---------------+---------------------+-----------------------------------------------------------------------+----------+
 
 
@@ -1095,7 +1097,7 @@ Interactions with OVR_multiview
 
     MAX_MESH_MULTIVIEW_VIEW_COUNT_EXT limits the maximum number of views that
     can be used in a mesh shader which can be queried by GetIntegerv. If this
-    value is zero, it means mesh shader does not support multiview.
+    value is one, it means mesh shader does not support multiview.
 
 Interactions with OpenGL ES 3.2
 
