@@ -6839,7 +6839,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x9554" name="GL_NUM_SPIR_V_EXTENSIONS"/>
         <enum value="0x9555" name="GL_SCISSOR_TEST_EXCLUSIVE_NV"/>
         <enum value="0x9556" name="GL_SCISSOR_BOX_EXCLUSIVE_NV"/>
-        <enum value="0x9557" name="GL_MAX_MESH_VIEWS_EXT"/>
+        <enum value="0x9557" name="GL_MAX_MESH_MULTIVIEW_VIEW_COUNT_EXT"/>
         <enum value="0x9557" name="GL_MAX_MESH_VIEWS_NV"/>
         <enum value="0x9558" name="GL_RENDER_GPU_MASK_NV"/>
         <enum value="0x9559" name="GL_MESH_SHADER_EXT"/>
@@ -41467,6 +41467,7 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_MAX_MESH_OUTPUT_PRIMITIVES_EXT"/>
                 <enum name="GL_MAX_MESH_OUTPUT_COMPONENTS_EXT"/>
                 <enum name="GL_MAX_MESH_OUTPUT_LAYERS_EXT"/>
+		<enum name="GL_MAX_MESH_MULTIVIEW_VIEW_COUNT_EXT"/>
                 <enum name="GL_MESH_OUTPUT_PER_VERTEX_GRANULARITY_EXT"/>
                 <enum name="GL_MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_EXT"/>
                 <enum name="GL_MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_EXT"/>
