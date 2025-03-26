@@ -30,8 +30,8 @@ Status
 
 Version
 
-    Last Modified Date:   May 1, 2015
-    Author Revision:      3
+    Last Modified Date:   March 26, 2025
+    Author Revision:      4
 
 Number
 
@@ -43,9 +43,6 @@ Dependencies
 
     This extension is written against the OpenGL ES 3.1 (June 4, 2014)
     Specification.
-
-    The definition of this extension is affected by the presence of
-    GL_EXT_direct_state_access.
 
 Overview
 
@@ -408,11 +405,6 @@ Errors
     MAP_PERSISTENT_BIT_EXT included in <access>.
 
 
-Dependencies on GL_EXT_direct_state_access
-
-    If GL_EXT_direct_state_access is not supported, remove all references to
-    NamedBufferStorageEXT.
-
 Conformance Tests
 
     TBD
@@ -521,3 +513,4 @@ Revision History
                               to make CPU writes visible to the GPU in
                               this case without an explicit flush (Bug
                               13578, sync w/ ARB_buffer_storage v.25).
+     4    03/26/25  zmike     Delete references to GL_EXT_direct_state_access.
