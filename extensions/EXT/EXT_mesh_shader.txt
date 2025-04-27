@@ -22,7 +22,7 @@ Status
 
 Version
 
-    Last Modified Date:     February 8, 2025
+    Last Modified Date:     April 27, 2025
     Revision:               1
 
 Number
@@ -849,7 +849,8 @@ Modifications to the OpenGL 4.6 Specification (Core Profile)
         PARAMETER_BUFFER binding point.
 
         An INVALID_VALUE error is generated if <drawcount> (the offset of the
-        memory holding the actual draw count) is not a multiple of four.
+        memory holding the actual draw count) is negative or is not a multiple
+        of four.
 
         An INVALID_OPERATION error is generated if reading a <sizei> typed value
         from the buffer bound to the PARAMETER_BUFFER target at the offset
@@ -1007,10 +1008,10 @@ New Implementation Dependent State
     +------------------------------------------+-----------+---------------+---------------------+-----------------------------------------------------------------------+----------+
     | Get Value                                | Type      | Get Command   | Minimum Value       | Description                                                           | Sec.     |
     +------------------------------------------+-----------+---------------+---------------------+-----------------------------------------------------------------------+----------+
-    | MAX_TASK_WORK_GROUP_TOTAL_COUNT_EXT      | Z+        | GetIntegerv   | 65535               | Maximum total number of work groups that can be launched              | X.6      |
+    | MAX_TASK_WORK_GROUP_TOTAL_COUNT_EXT      | Z+        | GetIntegerv   | 2^22                | Maximum total number of work groups that can be launched              | X.6      |
     | MAX_TASK_WORK_GROUP_COUNT_EXT            | 3 x Z+    | GetIntegeri_v | 65535               | Maximum number of work groups that can be launched (per dimension)    | X.6      |
-    | MAX_TASK_WORK_GROUP_SIZE_EXT             | 3 x Z+    | GetIntegeri_v | 32 (x), 1 (y,z)     | Maximum local size of a task work group (per dimension)               | X.6      |
-    | MAX_TASK_WORK_GROUP_INVOCATIONS_EXT      | Z+        | GetIntegerv   | 32                  | Maximum total task shader invocations in a single local work group    | X.6      |
+    | MAX_TASK_WORK_GROUP_SIZE_EXT             | 3 x Z+    | GetIntegeri_v | 128                 | Maximum local size of a task work group (per dimension)               | X.6      |
+    | MAX_TASK_WORK_GROUP_INVOCATIONS_EXT      | Z+        | GetIntegerv   | 128                 | Maximum total task shader invocations in a single local work group    | X.6      |
     | MAX_TASK_UNIFORM_BLOCKS_EXT              | Z+        | GetIntegerv   | 12                  | Maximum number of uniform blocks per task program                     | 7.6.2    |
     | MAX_TASK_TEXTURE_IMAGE_UNITS_EXT         | Z+        | GetIntegerv   | 16                  | Maximum number of texture image units accessible by a task program    | 11.1.3.5 |
     | MAX_TASK_ATOMIC_COUNTER_BUFFERS_EXT      | Z+        | GetIntegerv   | 8                   | Number of atomic counter buffers accessed by a task program           | 7.7      |
@@ -1021,8 +1022,8 @@ New Implementation Dependent State
     | MAX_COMBINED_TASK_UNIFORM_COMPONENTS_EXT | Z+        | GetIntegerv   | *                   | Number of words for task shader uniform variables in all uniform      | 7.6      |
     |                                          |           |               |                     | blocks, including the default                                         |          |
     | MAX_TASK_PAYLOAD_SIZE_EXT                | Z+        | GetIntegerv   | 16384               | Maximum total storage size of all variables declared as <out>         | X.1      |
-    | MAX_TASK_SHARED_MEMORY_SIZE_EXT          | Z+        | GetIntegerv   | 16384               | Maximum total storage size of all variables declared as <shared>      | X.1      |
-    | MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_-     | Z+        | GetIntegerv   | 16384               | Maximum total storage size of all variables declared as <shared> and  | X.1      |
+    | MAX_TASK_SHARED_MEMORY_SIZE_EXT          | Z+        | GetIntegerv   | 32768               | Maximum total storage size of all variables declared as <shared>      | X.1      |
+    | MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_-     | Z+        | GetIntegerv   | 32768               | Maximum total storage size of all variables declared as <shared> and  | X.1      |
     | SIZE_EXT                                 |           |               |                     | <out> in all task shaders linked into a single program object         |          |
     +------------------------------------------+-----------+---------------+---------------------+-----------------------------------------------------------------------+----------+
 
@@ -1032,10 +1033,10 @@ New Implementation Dependent State
     +------------------------------------------+-----------+---------------+---------------------+-----------------------------------------------------------------------+----------+
     | Get Value                                | Type      | Get Command   | Minimum Value       | Description                                                           | Sec.     |
     +------------------------------------------+-----------+---------------+---------------------+-----------------------------------------------------------------------+----------+
-    | MAX_MESH_WORK_GROUP_TOTAL_COUNT_EXT      | Z+        | GetIntegerv   | 65535               | Maximum total number of work groups that can be launched              | X.6      |
+    | MAX_MESH_WORK_GROUP_TOTAL_COUNT_EXT      | Z+        | GetIntegerv   | 2^22                | Maximum total number of work groups that can be launched              | X.6      |
     | MAX_MESH_WORK_GROUP_COUNT_EXT            | 3 x Z+    | GetIntegeri_v | 65535               | Maximum number of work groups that can be launched (per dimension)    | X.6      |
-    | MAX_MESH_WORK_GROUP_SIZE_EXT             | 3 x Z+    | GetIntegeri_v | 32 (x), 1 (y,z)     | Maximum local size of a mesh work group (per dimension)               | X.6      |
-    | MAX_MESH_WORK_GROUP_INVOCATIONS_EXT      | Z+        | GetIntegerv   | 32                  | Maximum total mesh shader invocations in a single local work group    | X.6      |
+    | MAX_MESH_WORK_GROUP_SIZE_EXT             | 3 x Z+    | GetIntegeri_v | 128                 | Maximum local size of a mesh work group (per dimension)               | X.6      |
+    | MAX_MESH_WORK_GROUP_INVOCATIONS_EXT      | Z+        | GetIntegerv   | 128                 | Maximum total mesh shader invocations in a single local work group    | X.6      |
     | MAX_MESH_UNIFORM_BLOCKS_EXT              | Z+        | GetIntegerv   | 12                  | Maximum number of uniform blocks per mesh program                     | 7.6.2    |
     | MAX_MESH_TEXTURE_IMAGE_UNITS_EXT         | Z+        | GetIntegerv   | 16                  | Maximum number of texture image units accessible by a mesh shader     | 11.1.3.5 |
     | MAX_MESH_ATOMIC_COUNTER_BUFFERS_EXT      | Z+        | GetIntegerv   | 8                   | Number of atomic counter buffers accessed by a mesh shader            | 7.7      |
@@ -1045,11 +1046,11 @@ New Implementation Dependent State
     | MAX_MESH_UNIFORM_COMPONENTS_EXT          | Z+        | GetIntegerv   | 512                 | Number of components for mesh shader uniform variables                | 7.6      |
     | MAX_COMBINED_MESH_UNIFORM_COMPONENTS_EXT | Z+        | GetIntegerv   | *                   | Number of words for mesh shader uniform variables in all uniform      | 7.6      |
     |                                          |           |               |                     | blocks, including the default                                         |          |
-    | MAX_MESH_SHARED_MEMORY_SIZE_EXT          | Z+        | GetIntegerv   | 16384               | Maximum total storage size of all variables declared as <shared>      | X.3      |
-    | MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_-     | Z+        | GetIntegerv   | 16384               | Maximum total storage size of all variables declared as <shared> and  | X.3      |
+    | MAX_MESH_SHARED_MEMORY_SIZE_EXT          | Z+        | GetIntegerv   | 28672               | Maximum total storage size of all variables declared as <shared>      | X.3      |
+    | MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_-     | Z+        | GetIntegerv   | 28672               | Maximum total storage size of all variables declared as <shared> and  | X.3      |
     | SIZE_EXT                                 |           |               |                     | <in> in all mesh shaders linked into a single program object          |          |
-    | MAX_MESH_OUTPUT_MEMORY_SIZE_EXT          | Z+        | GetIntegerv   | 16384               | Maximum total storage size of all variables declared as <out>         | X.3      |
-    | MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_-     | Z+        | GetIntegerv   | 16384               | Maximum total storage size of all variables declared as <in> and      | X.3      |
+    | MAX_MESH_OUTPUT_MEMORY_SIZE_EXT          | Z+        | GetIntegerv   | 32768               | Maximum total storage size of all variables declared as <out>         | X.3      |
+    | MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_-     | Z+        | GetIntegerv   | 48128               | Maximum total storage size of all variables declared as <in> and      | X.3      |
     | SIZE_EXT                                 |           |               |                     | <out> in all mesh shaders linked into a single program object         |          |
     | MAX_MESH_OUTPUT_PRIMITIVES_EXT           | Z+        | GetIntegerv   | 256                 | Maximum number of primitives a single mesh work group can emit        | X.5      |
     | MAX_MESH_OUTPUT_VERTICES_EXT             | Z+        | GetIntegerv   | 256                 | Maximum number of vertices a single mesh work group can emit          | X.5      |
