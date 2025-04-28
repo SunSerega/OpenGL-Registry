@@ -19,7 +19,7 @@ extern "C" {
 #define GL_APIENTRYP GL_APIENTRY*
 #endif
 
-#define GL_GLEXT_VERSION 20240815
+#define GL_GLEXT_VERSION 20250203
 
 /* Generated C header for:
  * API: gles2
@@ -2609,6 +2609,11 @@ GL_APICALL void GL_APIENTRY glGetSamplerParameterfv (GLuint sampler, GLenum pnam
 #define GL_MESA_shader_integer_functions 1
 #endif /* GL_MESA_shader_integer_functions */
 
+#ifndef GL_MESA_texture_const_bandwidth
+#define GL_MESA_texture_const_bandwidth 1
+#define GL_CONST_BW_TILING_MESA           0x8BBE
+#endif /* GL_MESA_texture_const_bandwidth */
+
 #ifndef GL_NVX_blend_equation_advanced_multi_draw_buffers
 #define GL_NVX_blend_equation_advanced_multi_draw_buffers 1
 #endif /* GL_NVX_blend_equation_advanced_multi_draw_buffers */
@@ -3741,6 +3746,14 @@ GL_APICALL void GL_APIENTRY glShadingRateSampleOrderCustomNV (GLenum rate, GLuin
 #ifndef GL_NV_stereo_view_rendering
 #define GL_NV_stereo_view_rendering 1
 #endif /* GL_NV_stereo_view_rendering */
+
+#ifndef GL_NV_texture_barrier
+#define GL_NV_texture_barrier 1
+typedef void (GL_APIENTRYP PFNGLTEXTUREBARRIERNVPROC) (void);
+#ifdef GL_GLEXT_PROTOTYPES
+GL_APICALL void GL_APIENTRY glTextureBarrierNV (void);
+#endif
+#endif /* GL_NV_texture_barrier */
 
 #ifndef GL_NV_texture_border_clamp
 #define GL_NV_texture_border_clamp 1
