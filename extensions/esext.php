@@ -723,4 +723,8 @@
 </li>
 <li value=346><a href="extensions/QCOM/QCOM_ycbcr_degamma.txt">GL_QCOM_ycbcr_degamma</a>
 </li>
+<li value=347><a href="extensions/MESA/MESA_texture_const_bandwidth.txt">GL_MESA_texture_const_bandwidth</a>
+</li>
+<li value=348><a href="extensions/EXT/EXT_shader_clock.txt">GL_EXT_shader_clock</a>
+</li>
 </ol>
