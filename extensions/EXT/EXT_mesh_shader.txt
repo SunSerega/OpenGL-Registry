@@ -884,21 +884,19 @@ Modifications to the OpenGL 4.6 Specification (Core Profile)
 
     X.8 Rasterization Order
 
-    As task and mesh shaders change how primitives are dispatched, a subsequent
-    modification of rasterization order is made.  Within a mesh shader work group,
-    primitives are rasterized in the order in which they are defined in the
-    output.  Mesh shader work groups either launched directly by the API,
-    indirectly by the API, or indirectly from a single task shader work group will
-    rasterize their outputs in sequential order based on their flattened work
-    group index, equal to
+    Following guarantees are provided for the relative ordering of primitives
+    produced by a mesh shader, as they pertain to primitive order.
 
-        gl_WorkGroupID.x +
-	gl_WorkGroupID.y * gl_NumWorkGroups.x +
-        gl_WorkGroupID.z * (gl_NumWorkGroups.x * gl_NumWorkGroups.y)
+    * When a task shader is used, mesh workgroups spawned from lower tasks will
+      be ordered prior those workgroups from subsequent tasks.
 
-    When using task shaders, there is no rasterization order guarantee between
-    mesh shaders launched by separate task shader workgroups, even within the
-    same draw command.
+    * All output primitives generated from a given mesh workgroup are passed to
+      subsequent pipeline stages before any output primitives generated from
+      subsequent input workgroups.
+
+    * All output primitives within a mesh workgroup, will be generated in the
+      ordering provided by the builtin primitive indexbuffer (from low address
+      to high address).
 
     X.9 Shader Preferences
 
