@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <registry>
     <comment>
-Copyright 2013-2025 The Khronos Group Inc.
+Copyright 2013-2026 The Khronos Group Inc.
 SPDX-License-Identifier: Apache-2.0
 
 This file, gl.xml, is the OpenGL and OpenGL API Registry. The canonical
@@ -194,6 +194,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x0040" name="GL_MAP_PERSISTENT_BIT_EXT" group="MapBufferAccessMask,BufferStorageMask"/>
         <enum value="0x0080" name="GL_MAP_COHERENT_BIT" group="MapBufferAccessMask,BufferStorageMask"/>
         <enum value="0x0080" name="GL_MAP_COHERENT_BIT_EXT" group="MapBufferAccessMask,BufferStorageMask"/>
+        <enum value="0x4000" name="GL_MAP_CLIENT_POINTER_BIT_MESA" group="MapBufferAccessMask"/>
     </enums>
 
     <enums namespace="GL" group="MemoryBarrierMask" type="bitmask">
@@ -3322,8 +3323,8 @@ typedef unsigned int GLhandleARB;
     </enums>
 
     <enums namespace="GL" start="0x86B0" end="0x86BF" vendor="3DFX">
-        <enum value="0x86B0" name="GL_COMPRESSED_RGB_FXT1_3DFX"/>
-        <enum value="0x86B1" name="GL_COMPRESSED_RGBA_FXT1_3DFX"/>
+        <enum value="0x86B0" name="GL_COMPRESSED_RGB_FXT1_3DFX" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x86B1" name="GL_COMPRESSED_RGBA_FXT1_3DFX" group="InternalFormat,SizedInternalFormat"/>
         <enum value="0x86B2" name="GL_MULTISAMPLE_3DFX"/>
         <enum value="0x86B3" name="GL_SAMPLE_BUFFERS_3DFX"/>
         <enum value="0x86B4" name="GL_SAMPLES_3DFX"/>
@@ -3472,11 +3473,11 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8741" name="GL_DOT3_RGBA_EXT"/>
         <enum value="0x8741" name="GL_PROGRAM_BINARY_LENGTH_OES" comment="NOT an alias. Accidental reuse of GL_DOT3_RGBA_EXT"/>
         <enum value="0x8741" name="GL_PROGRAM_BINARY_LENGTH" group="ProgramPropertyARB"/>
-        <enum value="0x8742" name="GL_MIRROR_CLAMP_ATI"/>
-        <enum value="0x8742" name="GL_MIRROR_CLAMP_EXT"/>
-        <enum value="0x8743" name="GL_MIRROR_CLAMP_TO_EDGE"/>
-        <enum value="0x8743" name="GL_MIRROR_CLAMP_TO_EDGE_ATI"/>
-        <enum value="0x8743" name="GL_MIRROR_CLAMP_TO_EDGE_EXT"/>
+        <enum value="0x8742" name="GL_MIRROR_CLAMP_ATI" group="TextureWrapMode"/>
+        <enum value="0x8742" name="GL_MIRROR_CLAMP_EXT" group="TextureWrapMode"/>
+        <enum value="0x8743" name="GL_MIRROR_CLAMP_TO_EDGE" group="TextureWrapMode"/>
+        <enum value="0x8743" name="GL_MIRROR_CLAMP_TO_EDGE_ATI" group="TextureWrapMode"/>
+        <enum value="0x8743" name="GL_MIRROR_CLAMP_TO_EDGE_EXT" group="TextureWrapMode"/>
         <enum value="0x8744" name="GL_MODULATE_ADD_ATI"/>
         <enum value="0x8745" name="GL_MODULATE_SIGNED_ADD_ATI"/>
         <enum value="0x8746" name="GL_MODULATE_SUBTRACT_ATI"/>
@@ -3656,7 +3657,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x87EB" name="GL_INVARIANT_DATATYPE_EXT"/>
         <enum value="0x87EC" name="GL_LOCAL_CONSTANT_VALUE_EXT"/>
         <enum value="0x87ED" name="GL_LOCAL_CONSTANT_DATATYPE_EXT"/>
-        <enum value="0x87EE" name="GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD"/>
+        <enum value="0x87EE" name="GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD" group="InternalFormat,SizedInternalFormat"/>
         <enum value="0x87F0" name="GL_PN_TRIANGLES_ATI"/>
         <enum value="0x87F1" name="GL_MAX_PN_TRIANGLES_TESSELATION_LEVEL_ATI"/>
         <enum value="0x87F2" name="GL_PN_TRIANGLES_POINT_MODE_ATI" group="PNTrianglesPNameATI"/>
@@ -3666,8 +3667,8 @@ typedef unsigned int GLhandleARB;
         <enum value="0x87F6" name="GL_PN_TRIANGLES_POINT_MODE_CUBIC_ATI"/>
         <enum value="0x87F7" name="GL_PN_TRIANGLES_NORMAL_MODE_LINEAR_ATI"/>
         <enum value="0x87F8" name="GL_PN_TRIANGLES_NORMAL_MODE_QUADRATIC_ATI"/>
-        <enum value="0x87F9" name="GL_3DC_X_AMD"/>
-        <enum value="0x87FA" name="GL_3DC_XY_AMD"/>
+        <enum value="0x87F9" name="GL_3DC_X_AMD" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x87FA" name="GL_3DC_XY_AMD" group="InternalFormat,SizedInternalFormat"/>
         <enum value="0x87FB" name="GL_VBO_FREE_MEMORY_ATI"/>
         <enum value="0x87FC" name="GL_TEXTURE_FREE_MEMORY_ATI"/>
         <enum value="0x87FD" name="GL_RENDERBUFFER_FREE_MEMORY_ATI"/>
@@ -4120,7 +4121,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x88ED" name="GL_PIXEL_PACK_BUFFER_BINDING_ARB"/>
         <enum value="0x88ED" name="GL_PIXEL_PACK_BUFFER_BINDING_EXT"/>
         <enum value="0x88ED" name="GL_PIXEL_PACK_BUFFER_BINDING_NV"/>
-        <enum value="0x88EE" name="GL_ETC1_SRGB8_NV"/>
+        <enum value="0x88EE" name="GL_ETC1_SRGB8_NV" group="InternalFormat,SizedInternalFormat"/>
         <enum value="0x88EF" name="GL_PIXEL_UNPACK_BUFFER_BINDING" group="GetPName"/>
         <enum value="0x88EF" name="GL_PIXEL_UNPACK_BUFFER_BINDING_ARB"/>
         <enum value="0x88EF" name="GL_PIXEL_UNPACK_BUFFER_BINDING_EXT"/>
@@ -4167,7 +4168,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8909" name="GL_MAX_PROGRAM_RESULT_COMPONENTS_NV"/>
         <enum value="0x8910" name="GL_STENCIL_TEST_TWO_SIDE_EXT"/>
         <enum value="0x8911" name="GL_ACTIVE_STENCIL_FACE_EXT"/>
-        <enum value="0x8912" name="GL_MIRROR_CLAMP_TO_BORDER_EXT"/>
+        <enum value="0x8912" name="GL_MIRROR_CLAMP_TO_BORDER_EXT" group="TextureWrapMode"/>
             <unused start="0x8913" vendor="NV"/>
         <enum value="0x8914" name="GL_SAMPLES_PASSED" group="QueryTarget"/>
         <enum value="0x8914" name="GL_SAMPLES_PASSED_ARB"/>
@@ -4395,10 +4396,10 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8A51" name="GL_RGB_RAW_422_APPLE"/>
         <enum value="0x8A52" name="GL_FRAGMENT_SHADER_DISCARDS_SAMPLES_EXT"/>
         <enum value="0x8A53" name="GL_SYNC_OBJECT_APPLE"/>
-        <enum value="0x8A54" name="GL_COMPRESSED_SRGB_PVRTC_2BPPV1_EXT"/>
-        <enum value="0x8A55" name="GL_COMPRESSED_SRGB_PVRTC_4BPPV1_EXT"/>
-        <enum value="0x8A56" name="GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV1_EXT"/>
-        <enum value="0x8A57" name="GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV1_EXT"/>
+        <enum value="0x8A54" name="GL_COMPRESSED_SRGB_PVRTC_2BPPV1_EXT" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x8A55" name="GL_COMPRESSED_SRGB_PVRTC_4BPPV1_EXT" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x8A56" name="GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV1_EXT" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x8A57" name="GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV1_EXT" group="InternalFormat,SizedInternalFormat"/>
             <unused start="0x8A58" end="0x8A7F" vendor="APPLE"/>
     </enums>
 
@@ -4612,10 +4613,10 @@ typedef unsigned int GLhandleARB;
     </enums>
 
     <enums namespace="GL" start="0x8C00" end="0x8C0F" vendor="IMG">
-        <enum value="0x8C00" name="GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG"/>
-        <enum value="0x8C01" name="GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG"/>
-        <enum value="0x8C02" name="GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG"/>
-        <enum value="0x8C03" name="GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG"/>
+        <enum value="0x8C00" name="GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x8C01" name="GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x8C02" name="GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x8C03" name="GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG" group="InternalFormat,SizedInternalFormat"/>
         <enum value="0x8C04" name="GL_MODULATE_COLOR_IMG"/>
         <enum value="0x8C05" name="GL_RECIP_ADD_SIGNED_ALPHA_IMG"/>
         <enum value="0x8C06" name="GL_TEXTURE_ALPHA_MODULATE_IMG"/>
@@ -4748,10 +4749,10 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8C4F" name="GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT" group="InternalFormat,SizedInternalFormat"/>
         <enum value="0x8C4F" name="GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_NV" group="InternalFormat,SizedInternalFormat"/>
             <unused start="0x8C50" end="0x8C6F" vendor="NV"/>
-        <enum value="0x8C70" name="GL_COMPRESSED_LUMINANCE_LATC1_EXT"/>
-        <enum value="0x8C71" name="GL_COMPRESSED_SIGNED_LUMINANCE_LATC1_EXT"/>
-        <enum value="0x8C72" name="GL_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT"/>
-        <enum value="0x8C73" name="GL_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2_EXT"/>
+        <enum value="0x8C70" name="GL_COMPRESSED_LUMINANCE_LATC1_EXT" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x8C71" name="GL_COMPRESSED_SIGNED_LUMINANCE_LATC1_EXT" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x8C72" name="GL_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x8C73" name="GL_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2_EXT" group="InternalFormat,SizedInternalFormat"/>
         <enum value="0x8C74" name="GL_TESS_CONTROL_PROGRAM_PARAMETER_BUFFER_NV"/>
         <enum value="0x8C75" name="GL_TESS_EVALUATION_PROGRAM_PARAMETER_BUFFER_NV"/>
         <enum value="0x8C76" name="GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH" group="ProgramPropertyARB"/>
@@ -4815,8 +4816,8 @@ typedef unsigned int GLhandleARB;
     <enums namespace="GL" start="0x8C90" end="0x8C9F" vendor="QCOM" comment="For Affie Munshi. Reassigned from AMD to QCOM (bug 5874)">
         <enum value="0x8C90" name="GL_MOTION_ESTIMATION_SEARCH_BLOCK_X_QCOM" group="GetPName"/>
         <enum value="0x8C91" name="GL_MOTION_ESTIMATION_SEARCH_BLOCK_Y_QCOM" group="GetPName"/>
-        <enum value="0x8C92" name="GL_ATC_RGB_AMD"/>
-        <enum value="0x8C93" name="GL_ATC_RGBA_EXPLICIT_ALPHA_AMD"/>
+        <enum value="0x8C92" name="GL_ATC_RGB_AMD" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x8C93" name="GL_ATC_RGBA_EXPLICIT_ALPHA_AMD" group="InternalFormat,SizedInternalFormat"/>
             <unused start="0x8C94" end="0x8C95" vendor="QCOM"/>
         <enum value="0x8C96" name="GL_TEXTURE_LOD_BIAS_QCOM"/>
             <unused start="0x8C97" end="0x8C9F" vendor="QCOM"/>
@@ -6136,8 +6137,8 @@ typedef unsigned int GLhandleARB;
         <enum value="0x9134" name="GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_IMG"/>
         <enum value="0x9135" name="GL_MAX_SAMPLES_IMG"/>
         <enum value="0x9136" name="GL_TEXTURE_SAMPLES_IMG"/>
-        <enum value="0x9137" name="GL_COMPRESSED_RGBA_PVRTC_2BPPV2_IMG"/>
-        <enum value="0x9138" name="GL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG"/>
+        <enum value="0x9137" name="GL_COMPRESSED_RGBA_PVRTC_2BPPV2_IMG" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x9138" name="GL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG" group="InternalFormat,SizedInternalFormat"/>
         <enum value="0x9139" name="GL_CUBIC_IMG"/>
         <enum value="0x913A" name="GL_CUBIC_MIPMAP_NEAREST_IMG"/>
         <enum value="0x913B" name="GL_CUBIC_MIPMAP_LINEAR_IMG"/>
@@ -6763,8 +6764,8 @@ typedef unsigned int GLhandleARB;
     </enums>
 
     <enums namespace="GL" start="0x93F0" end="0x94EF" vendor="APPLE" comment="Khronos bug 10233">
-        <enum value="0x93F0" name="GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV2_IMG"/>
-        <enum value="0x93F1" name="GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV2_IMG"/>
+        <enum value="0x93F0" name="GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV2_IMG" group="InternalFormat,SizedInternalFormat"/>
+        <enum value="0x93F1" name="GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV2_IMG" group="InternalFormat,SizedInternalFormat"/>
             <unused start="0x93F2" end="0x94EF" vendor="APPLE"/>
     </enums>
 
@@ -7090,11 +7091,11 @@ typedef unsigned int GLhandleARB;
         <enum value="0x9753" name="GL_TASK_SHADER_INVOCATIONS_EXT" group="QueryTarget"/>
         <enum value="0x9754" name="GL_MESH_SHADER_INVOCATIONS_EXT" group="QueryTarget"/>
         <enum value="0x9755" name="GL_MESH_PRIMITIVES_GENERATED_EXT" group="QueryTarget"/>
-	<enum value="0x9756" name="GL_MAX_MESH_OUTPUT_PRIMITIVES_EXT" group="GetPName"/>
-	<enum value="0x9757" name="GL_MAX_MESH_WORK_GROUP_INVOCATIONS_EXT" group="GetPName"/>
-	<enum value="0x9758" name="GL_MAX_MESH_WORK_GROUP_SIZE_EXT" group="GetPName"/>
-	<enum value="0x9759" name="GL_MAX_TASK_WORK_GROUP_INVOCATIONS_EXT" group="GetPName"/>
-	<enum value="0x975A" name="GL_MAX_TASK_WORK_GROUP_SIZE_EXT" group="GetPName"/>
+        <enum value="0x9756" name="GL_MAX_MESH_OUTPUT_PRIMITIVES_EXT" group="GetPName"/>
+        <enum value="0x9757" name="GL_MAX_MESH_WORK_GROUP_INVOCATIONS_EXT" group="GetPName"/>
+        <enum value="0x9758" name="GL_MAX_MESH_WORK_GROUP_SIZE_EXT" group="GetPName"/>
+        <enum value="0x9759" name="GL_MAX_TASK_WORK_GROUP_INVOCATIONS_EXT" group="GetPName"/>
+        <enum value="0x975A" name="GL_MAX_TASK_WORK_GROUP_SIZE_EXT" group="GetPName"/>
             <unused start="0x975B" end="0x975F" vendor="MESA"/>
     </enums>
 
@@ -7103,14 +7104,18 @@ typedef unsigned int GLhandleARB;
     </enums>
 
     <enums namespace="GL" start="0x9770" end="0x977F" vendor="HUAWEI" comment="Reserved for Pan Gao">
-        <enum value="0x9770" name="GL_HUAWEI_SHADER_BINARY" group="ShaderBinaryFormat"/>
-        <enum value="0x9771" name="GL_HUAWEI_PROGRAM_BINARY"/>
+        <enum value="0x9770" name="GL_SHADER_BINARY_HUAWEI" group="ShaderBinaryFormat"/>
+        <enum value="0x9771" name="GL_PROGRAM_BINARY_HUAWEI"/>
             <unused start="0x9772" end="0x977F" vendor="HUAWEI"/>
     </enums>
 
     <enums namespace="GL" start="0x9780" end="0x978F" vendor="AMD" comment="Reserved for Jingwen Wang">
         <enum value="0x9780" name="GL_FRAGMENT_SHADING_RATE_PRIMITIVE_RATE_WITH_MULTI_VIEWPORT_SUPPORTED_EXT" group="GetPName"/>
             <unused start="0x9781" end="0x978F" vendor="AMD"/>
+    </enums>
+
+    <enums namespace="GL" start="0x9790" end="0x979F" vendor="MESA">
+        <enum value="0x9790" name="GL_BUFFER_CLIENT_POINTER_SIZE_MESA" group="BufferPNameARB"/>
     </enums>
 
 <!-- Enums reservable for future use. To reserve a new range, allocate one
@@ -7122,8 +7127,8 @@ typedef unsigned int GLhandleARB;
      file) File requests in the Khronos Bugzilla, OpenGL project, Registry
      component. -->
 
-    <enums namespace="GL" start="0x9790" end="99999" vendor="ARB" comment="RESERVED FOR FUTURE ALLOCATIONS BY KHRONOS">
-        <unused start="0x9790" end="99999" comment="RESERVED"/>
+    <enums namespace="GL" start="0x97A0" end="99999" vendor="ARB" comment="RESERVED FOR FUTURE ALLOCATIONS BY KHRONOS">
+        <unused start="0x97A0" end="99999" comment="RESERVED"/>
     </enums>
 
 <!-- Historical large block allocations, all unused except (in older days) by IBM -->
@@ -7234,6 +7239,11 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glActiveVaryingNV</name></proto>
             <param class="program"><ptype>GLuint</ptype> <name>program</name></param>
             <param len="COMPSIZE(name)">const <ptype>GLchar</ptype> *<name>name</name></param>
+        </command>
+        <command>
+            <proto>void <name>glAddClientPointerRangeMESA</name></proto>
+            <param><ptype>GLvoid</ptype> *<name>addr</name></param>
+            <param><ptype>GLsizeiptr</ptype> <name>size</name></param>
         </command>
         <command>
             <proto>void <name>glAlphaFragmentOp1ATI</name></proto>
@@ -13621,7 +13631,7 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glGetFixedv</name></proto>
             <param group="GetPName"><ptype>GLenum</ptype> <name>pname</name></param>
-            <param><ptype>GLfixed</ptype> *<name>params</name></param>
+            <param><ptype>GLfixed</ptype> *<name>data</name></param>
         </command>
         <command>
             <proto>void <name>glGetFixedvOES</name></proto>
@@ -22469,6 +22479,10 @@ typedef unsigned int GLhandleARB;
             <proto>void <name>glReferencePlaneSGIX</name></proto>
             <param len="4">const <ptype>GLdouble</ptype> *<name>equation</name></param>
             <glx type="render" opcode="2071"/>
+        </command>
+        <command>
+            <proto>void* <name>glReleaseClientPointerRangeMESA</name></proto>
+            <param><ptype>GLsizeiptr</ptype> *<name>size</name></param>
         </command>
         <command>
             <proto>void <name>glReleaseShaderCompiler</name></proto>
@@ -41451,7 +41465,7 @@ typedef unsigned int GLhandleARB;
                 <command name="glImportMemoryWin32NameEXT"/>
             </require>
         </extension>
-	<extension name="GL_EXT_mesh_shader" supported="gl|glcore|gles2">
+        <extension name="GL_EXT_mesh_shader" supported="gl|glcore|gles2">
             <require>
                 <enum name="GL_MESH_SHADER_EXT"/>
                 <enum name="GL_TASK_SHADER_EXT"/>
@@ -41486,7 +41500,7 @@ typedef unsigned int GLhandleARB;
                 <enum name="GL_MAX_MESH_OUTPUT_PRIMITIVES_EXT"/>
                 <enum name="GL_MAX_MESH_OUTPUT_COMPONENTS_EXT"/>
                 <enum name="GL_MAX_MESH_OUTPUT_LAYERS_EXT"/>
-		<enum name="GL_MAX_MESH_MULTIVIEW_VIEW_COUNT_EXT"/>
+                <enum name="GL_MAX_MESH_MULTIVIEW_VIEW_COUNT_EXT"/>
                 <enum name="GL_MESH_OUTPUT_PER_VERTEX_GRANULARITY_EXT"/>
                 <enum name="GL_MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_EXT"/>
                 <enum name="GL_MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_EXT"/>
@@ -42532,35 +42546,25 @@ typedef unsigned int GLhandleARB;
             </require>
         </extension>
         <extension name="GL_EXT_texture_sRGB" supported="gl|glcore">
-            <require api="gl" comment="LUMINANCE formats are not supported in glcore">
+            <require>
                 <enum name="GL_SRGB_EXT"/>
                 <enum name="GL_SRGB8_EXT"/>
                 <enum name="GL_SRGB_ALPHA_EXT"/>
                 <enum name="GL_SRGB8_ALPHA8_EXT"/>
-                <enum name="GL_SLUMINANCE_ALPHA_EXT"/>
-                <enum name="GL_SLUMINANCE8_ALPHA8_EXT"/>
-                <enum name="GL_SLUMINANCE_EXT"/>
-                <enum name="GL_SLUMINANCE8_EXT"/>
                 <enum name="GL_COMPRESSED_SRGB_EXT"/>
                 <enum name="GL_COMPRESSED_SRGB_ALPHA_EXT"/>
-                <enum name="GL_COMPRESSED_SLUMINANCE_EXT"/>
-                <enum name="GL_COMPRESSED_SLUMINANCE_ALPHA_EXT"/>
                 <enum name="GL_COMPRESSED_SRGB_S3TC_DXT1_EXT"/>
                 <enum name="GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT"/>
                 <enum name="GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT"/>
                 <enum name="GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT"/>
             </require>
-            <require api="glcore" comment="LUMINANCE formats are not supported in glcore">
-                <enum name="GL_SRGB_EXT"/>
-                <enum name="GL_SRGB8_EXT"/>
-                <enum name="GL_SRGB_ALPHA_EXT"/>
-                <enum name="GL_SRGB8_ALPHA8_EXT"/>
-                <enum name="GL_COMPRESSED_SRGB_EXT"/>
-                <enum name="GL_COMPRESSED_SRGB_ALPHA_EXT"/>
-                <enum name="GL_COMPRESSED_SRGB_S3TC_DXT1_EXT"/>
-                <enum name="GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT"/>
-                <enum name="GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT"/>
-                <enum name="GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT"/>
+            <require api="gl" profile="compatibility" comment="LUMINANCE formats are not supported in glcore">
+                <enum name="GL_SLUMINANCE_ALPHA_EXT"/>
+                <enum name="GL_SLUMINANCE8_ALPHA8_EXT"/>
+                <enum name="GL_SLUMINANCE_EXT"/>
+                <enum name="GL_SLUMINANCE8_EXT"/>
+                <enum name="GL_COMPRESSED_SLUMINANCE_EXT"/>
+                <enum name="GL_COMPRESSED_SLUMINANCE_ALPHA_EXT"/>
             </require>
         </extension>
         <extension name="GL_EXT_texture_sRGB_R8" supported="gles2|gl|glcore">
@@ -43089,12 +43093,12 @@ typedef unsigned int GLhandleARB;
         </extension>
         <extension name="GL_HUAWEI_program_binary" supported="gles2">
             <require>
-                <enum name="GL_HUAWEI_PROGRAM_BINARY"/>
+                <enum name="GL_PROGRAM_BINARY_HUAWEI"/>
             </require>
         </extension>
         <extension name="GL_HUAWEI_shader_binary" supported="gles2">
             <require>
-                <enum name="GL_HUAWEI_SHADER_BINARY"/>
+                <enum name="GL_SHADER_BINARY_HUAWEI"/>
             </require>
         </extension>
         <extension name="GL_IBM_cull_vertex" supported="gl">
@@ -43660,6 +43664,14 @@ typedef unsigned int GLhandleARB;
         <extension name="GL_MESA_framebuffer_swap_xy" supported="gl|glcore|gles2">
             <require>
                 <enum name="GL_FRAMEBUFFER_SWAP_XY_MESA"/>
+            </require>
+        </extension>
+        <extension name="GL_MESA_map_buffer_client_pointer" supported="gl">
+            <require>
+                <enum name="GL_MAP_CLIENT_POINTER_BIT_MESA"/>
+                <enum name="GL_BUFFER_CLIENT_POINTER_SIZE_MESA"/>
+                <command name="glAddClientPointerRangeMESA"/>
+                <command name="glReleaseClientPointerRangeMESA"/>
             </require>
         </extension>
         <extension name="GL_MESA_pack_invert" supported="gl">
